@@ -1,0 +1,12 @@
+{
+  "categories": [
+    {
+      "title": "📝 Changes",
+      "labels": []
+    }
+  ],
+  "sort": "ASC",
+  "template": "# 📦 Release Notes\n\n{{CHANGELOG}}\n",
+  "pr_template": "- {{TITLE}} (#{{NUMBER}}) by @{{AUTHOR}}",
+  "empty_template": "- No changes"
+}
