@@ -31,4 +31,4 @@ jobs:
       run: black . --check
 
     - name: Run tests with pytest
-      run: pytest -v
+      run: pytest -v --cov=./password_gen --cov-report=term-missing
