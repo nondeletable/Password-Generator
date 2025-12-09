@@ -12,10 +12,15 @@ Built with **Python + Flet**, works fully offline, customizable, and includes a 
 - Flexible configuration: letters, digits, symbols.
 - Guaranteed inclusion of at least one character from each selected category.
 - Password strength indicator with visual cues (❌ weak / ⚠️ fair / ✅ strong).
-- One-click copy to clipboard.
-- Clean and modern user interface.
+- ⏱️ **Auto-hide**: when a password is shown, it disappears after **10 seconds**.
+- 🧹 **Clipboard protection**: copied passwords are automatically removed from the clipboard after **30 seconds**.
+- 📋 One-click copy to clipboard.
+- 🖥️ Clean and modern user interface.
+- 🛡️ **Password Policies**:
+  - **Standard** — balanced complexity (letters, digits, symbols).
+  - **Admin** — stronger rules for administrator accounts.
+  - **NIST** — compliant with [NIST SP 800-63B](https://pages.nist.gov/800-63-3/) guidelines (longer, user-friendly but secure).
 
----
 
 ## 🛠 Technologies
 - **Python 3.13**
@@ -31,8 +36,8 @@ Built with **Python + Flet**, works fully offline, customizable, and includes a 
 
 ### Local development
 ```bash
-git clone https://github.com/SkriptSparrow/PasswordGenerator.git
-cd PasswordGenerator
+git clone https://github.com/nondeletable/Password-Generator.git
+cd Password-Generator
 pip install -r requirements-dev.txt
 python -m password_gen.ui.main
 ```
@@ -52,8 +57,8 @@ pyinstaller PasswordGenerator.spec --clean
 Each release is built automatically with GitHub Actions.
 Just tag a new version, e.g.:
 ```bash
-git tag v1.0.0
-git push origin v1.0.0
+git tag v1.1.1
+git push origin v1.1.1
 ```
 
 and a ready-to-use .exe will appear under Releases.
@@ -68,20 +73,26 @@ Main window:
 
 Password generated:
 
-![Main window](password_gen/assets/screenshots/app.jpg)
+![Password generated](password_gen/assets/screenshots/app.jpg)
+
+Choose different policies:
+
+![Choose different policies](password_gen/assets/screenshots/app_mode.jpg)
 
 ---
 
 ## 📥 Download
 
-👉 You can download the latest .exe build from the [Release](https://github.com/SkriptSparrow/PasswordGenerator/releases/latest) page.
+👉 You can download the latest .exe build from the [Release](https://github.com/nondeletable/Password-Generator/releases/latest) page.
 
 ---
 
 ## 📬 Contact
 
-👩‍💻 Author: SkriptSparrow
-✉️ Email: alexgicheva@gmail.com
-💬 Telegram: @Alex_Gicheva
+👩‍💻 Author: nondeletable
+
+✉️ Email: nondeletable@gmail.com
+
+💬 Telegram: @nondeletable
 
 ✨ Thank you for using Password Generator! We hope it makes your workflow faster and easier.
