@@ -1,4 +1,4 @@
-![CI](https://github.com/SkriptSparrow/PasswordGenerator/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/nondeletable/Password-Generator/actions/workflows/ci.yml/badge.svg)
 
 # 🔐 Password Generator
 
