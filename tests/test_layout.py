@@ -24,7 +24,7 @@ def test_build_ui_returns_container():
     # в контейнере должны быть элементы, например title_bar и footer
     assert any(isinstance(ctrl, ft.Row) for ctrl in container.controls)
     assert any(
-        isinstance(ctrl, ft.Text) and "DEVELOPED BY CODEBIRD" in ctrl.value
+        isinstance(ctrl, ft.Text) and "DEVELOPED BY NONDELETABLE" in ctrl.value
         for ctrl in container.controls
     )
 

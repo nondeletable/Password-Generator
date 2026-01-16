@@ -39,15 +39,18 @@ def test_open_nfo_window_adds_dialog(monkeypatch):
     assert page.updated
 
     # проверим, что есть кнопка с on_click, которая вызывает webbrowser.open
-    icon_buttons = [
+    buttons = [
         c
         for row in dlg.content.controls
         if isinstance(row, ft.Row)
         for c in row.controls
-        if isinstance(c, ft.IconButton)
+        if isinstance(c, ft.ElevatedButton)
     ]
-    assert icon_buttons, "Ожидались IconButton в диалоге"
+    assert buttons, "Ожидались ElevatedButton в диалоге"
 
     # вручную вызываем клик по первой кнопке
-    icon_buttons[0].on_click(None)
+    buttons[0].on_click(None)
+
     assert "url" in called
+    # (опционально) проверка, что это реально ссылка:
+    assert isinstance(called["url"], str) and called["url"]
