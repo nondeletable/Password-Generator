@@ -2,6 +2,8 @@ import webbrowser
 
 import flet as ft
 
+from password_gen.utils import resources
+
 
 def close_dialog(page: ft.Page, dialog: ft.AlertDialog):
     """Закрытие диалога."""
@@ -15,62 +17,81 @@ def open_nfo_window(page: ft.Page):
     def open_link(url):
         webbrowser.open(url)
 
+    discord_path = resources.get_image_path("discord.svg")
+    email_path = resources.get_image_path("email.svg")
+    github_path = resources.get_image_path("github.svg")
+
     dialog = ft.AlertDialog(
-        title=ft.Text("My contacts", text_align=ft.TextAlign.CENTER),
+        title=ft.Text("ABOUT", text_align=ft.TextAlign.CENTER, font_family="Rubik"),
         shape=ft.RoundedRectangleBorder(radius=8),
         content=ft.Column(
+            height=300,
+            width=270,
             controls=[
                 ft.Text(
-                    "Hi! My name is Alexandra. I'm a Python developer. "
-                    "It's one of my apps. If you like my work, "
-                    "there are contacts below where you can contact me!",
-                    size=18,
+                    "Hi! My name is Alexandra.\n"
+                    "I'm a Python developer.\n"
+                    "Thank you for using my app!",
+                    size=20,
+                    text_align=ft.TextAlign.CENTER,
+                    font_family="Rubik2",
+                    width=300,
                 ),
-                # Website
+                ft.Text(
+                    "If you’d like to say thanks, leave feedback, report a bug, "
+                    "or discuss collaboration, "
+                    "feel free to contact me via Discord, email, or GitHub.",
+                    size=15,
+                    text_align=ft.TextAlign.CENTER,
+                    font_family="Rubik2",
+                ),
+                ft.Container(height=10),  # Небольшой отступ
+                # Ряд с круглыми кнопками
                 ft.Row(
                     controls=[
-                        ft.Text("My website:", expand=1, size=18),
-                        ft.IconButton(
-                            icon=ft.Icons.WEB,
-                            tooltip="Website",
-                            icon_size=30,
-                            on_click=lambda e: open_link("https://mywebsite.com"),
+                        # Discord
+                        ft.ElevatedButton(
+                            content=ft.Image(
+                                src=str(discord_path), width=80, height=80
+                            ),
+                            width=60,
+                            height=60,
+                            style=ft.ButtonStyle(
+                                padding=0, shape=ft.RoundedRectangleBorder(radius=40)
+                            ),
+                            on_click=lambda e: open_link("https://discord.gg/QUC4mnBF"),
                         ),
-                    ],
-                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-                ),
-                # Email
-                ft.Row(
-                    controls=[
-                        ft.Text("My mail:", expand=1, size=18),
-                        ft.IconButton(
-                            icon=ft.Icons.EMAIL,
-                            tooltip="Email",
-                            icon_size=30,
+                        # Email
+                        ft.ElevatedButton(
+                            content=ft.Image(src=str(email_path), width=80, height=80),
+                            width=60,
+                            height=60,
+                            style=ft.ButtonStyle(
+                                padding=0, shape=ft.RoundedRectangleBorder(radius=40)
+                            ),
                             on_click=lambda e: open_link(
-                                "mailto:alexgicheva@gmail.com"
+                                "mailto:nondeletable@gmail.com"
+                            ),
+                        ),
+                        # GitHub
+                        ft.ElevatedButton(
+                            content=ft.Image(src=str(github_path), width=80, height=80),
+                            width=60,
+                            height=60,
+                            style=ft.ButtonStyle(
+                                padding=0, shape=ft.RoundedRectangleBorder(radius=40)
+                            ),
+                            on_click=lambda e: open_link(
+                                "https://github.com/nondeletable/Password-Generator"
                             ),
                         ),
                     ],
-                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-                ),
-                # GitHub
-                ft.Row(
-                    controls=[
-                        ft.Text("My github:", expand=1, size=18),
-                        ft.IconButton(
-                            icon=ft.Icons.HUB,
-                            tooltip="GitHub",
-                            icon_size=30,
-                            on_click=lambda e: open_link(
-                                "https://github.com/SkriptSparrow"
-                            ),
-                        ),
-                    ],
-                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                    alignment=ft.MainAxisAlignment.CENTER,
+                    spacing=40,
                 ),
             ],
-            spacing=20,
+            spacing=15,
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
         ),
         actions=[ft.TextButton("OK", on_click=lambda e: close_dialog(page, dialog))],
     )

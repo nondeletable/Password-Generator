@@ -39,7 +39,7 @@ def on_generate_password_click(
     strength_color.visible = True
 
     if warning:
-        strength_label.value = f"⚠️ {warning}"
+        strength_label.value = f"{warning}"
         strength_label.color = ft.Colors.RED
         strength_color.bgcolor = ft.Colors.RED
         strength_container.border = ft.border.all(1, ft.Colors.RED)
