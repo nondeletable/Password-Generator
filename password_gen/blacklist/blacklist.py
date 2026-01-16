@@ -19,5 +19,5 @@ def check_blacklist(pw: str) -> str | None:
     if has_repeated_chars(pw):
         return "This password has too many repeated characters."
     if is_too_short(pw):
-        return "This password is too short."
+        return "Password is too short."
     return None
