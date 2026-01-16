@@ -8,13 +8,22 @@ def build_ui(page: ft.Page):
     AUTOHIDE_SECONDS = 10
     CLEAR_CLIPBOARD_SECONDS = 30
 
+    MARGIN_TOP = 100
+    MARGIN_MIDDLE = 25
+    MARGIN_BOTTOM = 1
+
+    margin_top = ft.Container(height=MARGIN_TOP, width=400)
+    margin_middle = ft.Container(height=MARGIN_MIDDLE, width=400)
+    margin_bottom = ft.Container(height=MARGIN_BOTTOM, width=400)
+
     # --- Window controls ---
     close_button = ft.IconButton(ft.Icons.CLOSE, on_click=lambda e: page.window.close())
     maximize_button = ft.IconButton(
         ft.Icons.MENU, on_click=lambda e: dialogs.open_nfo_window(page)
     )
     minimize_button = ft.IconButton(
-        ft.Icons.REMOVE, on_click=lambda e: setattr(page.window, "minimized", True)
+        ft.Icons.REMOVE,
+        on_click=lambda e: (setattr(page.window, "minimized", True), page.update()),
     )
 
     drag_area = ft.WindowDragArea(
@@ -85,9 +94,10 @@ def build_ui(page: ft.Page):
 
     # --- Password field ---
     password_input = ft.TextField(
-        label="Generated password:",
+        hint_text="Generated password:",
+        hint_style=ft.TextStyle(color="#00bcd4"),
         width=350,
-        height=55,
+        height=50,
         read_only=True,
         password=True,
         suffix=ft.IconButton(
@@ -126,6 +136,7 @@ def build_ui(page: ft.Page):
         text="GENERATE",
         color=ft.Colors.WHITE,
         bgcolor="#00bcd4",
+        height=50,
         on_click=lambda e: handlers.on_generate_password_click(
             e,
             page,
@@ -143,6 +154,7 @@ def build_ui(page: ft.Page):
 
     copy_button = ft.ElevatedButton(
         content=ft.Icon(ft.Icons.CONTENT_COPY),
+        height=40,
         on_click=lambda e: handlers.on_copy_password_click(
             e, page, password_input, CLEAR_CLIPBOARD_SECONDS
         ),
@@ -150,7 +162,7 @@ def build_ui(page: ft.Page):
     )
 
     footer = ft.Text(
-        "DEVELOPED BY CODEBIRD",
+        "DEVELOPED BY NONDELETABLE",
         color=ft.Colors.GREY_500,
         width=350,
         text_align=ft.TextAlign.CENTER,
@@ -175,14 +187,14 @@ def build_ui(page: ft.Page):
     container = ft.Column(
         controls=[
             title_bar,
-            ft.Container(height=100, width=400),
+            margin_top,
             header_column,
-            ft.Container(height=25, width=400),
+            margin_middle,
             switch_row,
             length_policy_row,
             password_input,
             button_row,
-            ft.Container(height=5, width=400),
+            margin_bottom,
             footer,
         ],
         alignment=ft.MainAxisAlignment.CENTER,

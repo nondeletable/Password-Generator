@@ -49,7 +49,7 @@ def test_check_blacklist_repeats():
 
 
 def test_check_blacklist_short():
-    assert check_blacklist("123") == "This password is too short."
+    assert check_blacklist("123") == "Password is too short."
 
 
 def test_check_blacklist_secure():

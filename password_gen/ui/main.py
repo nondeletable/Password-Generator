@@ -1,3 +1,5 @@
+from importlib import resources as res
+
 import flet as ft
 
 from password_gen.ui.layout import build_ui
@@ -15,6 +17,13 @@ def main(page: ft.Page):
     page.window.frameless = False
     page.theme_mode = ft.ThemeMode.LIGHT
     page.theme = ft.Theme(color_scheme=ft.ColorScheme(primary="#00bcd4"))
+    font_path = res.files("password_gen").joinpath(
+        "assets/fonts/rubik/Rubik-Medium.ttf"
+    )
+    font_path_2 = res.files("password_gen").joinpath(
+        "assets/fonts/rubik/Rubik-Regular.ttf"
+    )
+    page.fonts = {"Rubik": str(font_path), "Rubik2": str(font_path_2)}
 
     # --- Add UI ---
     container = build_ui(page)
