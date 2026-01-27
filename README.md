@@ -32,52 +32,13 @@ Built with **Python + Flet**, works fully offline, customizable, and includes a 
 
 ---
 
-## 🚀 How to Run
-
-### Local development
-```bash
-git clone https://github.com/nondeletable/Password-Generator.git
-cd Password-Generator
-pip install -r requirements-dev.txt
-python -m password_gen.ui.main
-```
-
-### Run tests
-```bash
-pytest -v
-```
-
-### Build executable locally
-```bash
-pyinstaller PasswordGenerator.spec --clean
-```
-
-### Automatic build
-
-Each release is built automatically with GitHub Actions.
-Just tag a new version, e.g.:
-```bash
-git tag v1.1.1
-git push origin v1.1.1
-```
-
-and a ready-to-use .exe will appear under Releases.
-
----
-
 ## 📸 Screenshots
 
-Main window:
+![Main window](password_gen/assets/screenshots/pwd_gen.png)
 
-![Main window](password_gen/assets/screenshots/app_start.jpg)
+![2](password_gen/assets/screenshots/pwd_gen_2.png)
 
-Password generated:
-
-![Password generated](password_gen/assets/screenshots/app.jpg)
-
-Choose different policies:
-
-![Choose different policies](password_gen/assets/screenshots/app_mode.jpg)
+![3](password_gen/assets/screenshots/pwd_gen_3.png)
 
 ---
 

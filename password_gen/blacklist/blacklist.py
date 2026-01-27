@@ -15,9 +15,9 @@ def is_too_short(pw: str, min_length: int = 8) -> bool:
 
 def check_blacklist(pw: str) -> str | None:
     if is_blacklisted(pw):
-        return "This password is too common."
+        return "Too common"
     if has_repeated_chars(pw):
-        return "This password has too many repeated characters."
+        return "Too many repeated characters"
     if is_too_short(pw):
-        return "Password is too short."
+        return "Too short"
     return None

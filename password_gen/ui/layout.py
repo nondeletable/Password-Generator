@@ -94,8 +94,8 @@ def build_ui(page: ft.Page):
 
     # --- Password field ---
     password_input = ft.TextField(
-        hint_text="Generated password:",
-        hint_style=ft.TextStyle(color="#00bcd4"),
+        label="Generated password",
+        label_style=ft.TextStyle(color="#00bcd4"),
         width=350,
         height=50,
         read_only=True,
@@ -114,7 +114,7 @@ def build_ui(page: ft.Page):
         width=12, height=12, border_radius=6, bgcolor=None, visible=False
     )
     strength_label = ft.Text(
-        "Strength", color=ft.Colors.BLACK, text_align=ft.TextAlign.CENTER
+        "Strength", color=ft.Colors.GREY_500, text_align=ft.TextAlign.CENTER
     )
     strength_row = ft.Row(
         controls=[strength_color, strength_label],
@@ -126,8 +126,9 @@ def build_ui(page: ft.Page):
         content=strength_row,
         padding=5,
         border_radius=8,
-        border=ft.border.all(1, ft.Colors.BLACK),
-        width=190,
+        border=ft.border.all(1, ft.Colors.GREY_500),
+        width=150,
+        height=40,
         alignment=ft.alignment.center,
     )
 
@@ -136,7 +137,8 @@ def build_ui(page: ft.Page):
         text="GENERATE",
         color=ft.Colors.WHITE,
         bgcolor="#00bcd4",
-        height=50,
+        height=40,
+        width=120,
         on_click=lambda e: handlers.on_generate_password_click(
             e,
             page,
@@ -155,6 +157,7 @@ def build_ui(page: ft.Page):
     copy_button = ft.ElevatedButton(
         content=ft.Icon(ft.Icons.CONTENT_COPY),
         height=40,
+        width=60,
         on_click=lambda e: handlers.on_copy_password_click(
             e, page, password_input, CLEAR_CLIPBOARD_SECONDS
         ),
