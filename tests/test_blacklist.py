@@ -39,17 +39,15 @@ def test_is_too_short_false():
 
 
 def test_check_blacklist_common():
-    assert check_blacklist("password") == "This password is too common."
+    assert check_blacklist("password") == "Too common"
 
 
 def test_check_blacklist_repeats():
-    assert (
-        check_blacklist("aaaaaa") == "This password has too many repeated characters."
-    )
+    assert check_blacklist("aaaaaa") == "Too many repeated characters"
 
 
 def test_check_blacklist_short():
-    assert check_blacklist("123") == "Password is too short."
+    assert check_blacklist("123") == "Too short"
 
 
 def test_check_blacklist_secure():

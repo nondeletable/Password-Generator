@@ -11,7 +11,7 @@ def main(page: ft.Page):
     page.title = "Password generator"
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.window.width = 445
-    page.window.height = 773
+    page.window.height = 763
     page.window.resizable = False
     page.window.title_bar_hidden = True
     page.window.frameless = False

@@ -95,7 +95,7 @@ def test_generate_password_blacklist(monkeypatch):
         strength_container,
     )
 
-    assert "too common" in strength_label.value
+    assert "Too common" in strength_label.value
     assert strength_color.bgcolor == ft.Colors.RED
 
 
