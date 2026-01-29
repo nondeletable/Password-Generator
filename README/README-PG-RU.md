@@ -8,7 +8,7 @@
     <a href="https://github.com/nondeletable/Password-Generator/tree/master/README/README-PG-EN.md">English </a> |  
     <a href="https://github.com/nondeletable/Password-Generator/tree/master/README/README-PG-DE.md">Deutsch </a> |
     <a href="https://github.com/nondeletable/Password-Generator/tree/master/README/README-PG-CN.md">简体中文 </a> | 
-    <a href="https://github.com/nondeletable/Password-Generator/tree/master/README/README-PG-NV.md">Tiếng Việt </a> | 
+    <a href="https://github.com/nondeletable/Password-Generator/tree/master/README/README-PG-VN.md">Tiếng Việt </a> | 
     <a href="https://github.com/nondeletable/Password-Generator/tree/master/README/README-PG-RU.md">Русский </a>
     <br>
     <br>
